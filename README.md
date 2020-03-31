@@ -35,6 +35,7 @@ Local server features:
     - `Engine.ini`
     - `Admins.txt`
     - `MapCycle.txt`
+    - `Mods.txt`
     - `Bans.json`
     - Local copies of these files are stored in `sandstorm-admin-wrapper/server-config`. Before launching the server, the manual config is applied to the `server-config` files, then those files are copied into the appropriate places in order for the server to use them. This prevents the server from overwriting our changes. After the server closes, any new bans are added to the local copy.
 - **Server Control page**
@@ -133,6 +134,18 @@ Command-line parameters:
     - The RCON server used by Insurgency: Sandstorm has some unresolved [issues](https://forums.focus-home.com/topic/40331). As such, the RCON client found in this repository is customized to best work with Insurgency: Sandstorm and will likely not work well with other RCON-enabled servers (just like other RCON clients don't work well with Insurgency: Sandstorm).
   - [Server Query](https://developer.valvesoftware.com/wiki/Server_queries) (UDP)
     - We use the A2S_INFO, A2S_PLAYER, and A2S_RULES server queries.
+- Enabling Mods
+  - To enable mods on your server:
+    - Have a token added to your servers Engine.ini. [(more info here)](https://insurgencysandstorm.mod.io/guides/server-admin-guide?Mods#read17)
+    - Add one or more Mod ID(s) to Mods.txt. Mod ID can be found on the [Mod.IO website.](https://insurgencysandstorm.mod.io/) *Be sure to be Subcribed to the mods you are adding.*
+    ```
+    97298
+    95897
+    94277
+    91912
+    ```
+    - Add the mods to `MapCycle.txt` and `ModScenarios.txt`
+ - **Important: Allow the server some time(15-30 min) to download the mods. They will not instantly be available/working!**
 
 ### Known issues
 
